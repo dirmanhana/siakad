@@ -64,7 +64,7 @@ function frm() {
       <input type=text name='Login' value='' size=10 maxlength=20>
       </td></tr>
   <tr><td class=inp>Password:</td>
-      <td class=ul1><input type=password name='Password' value='' size=10 maxlength=10>
+      <td class=ul1><input type=password name='Password' value='tahun2013' size=10 maxlength=10>
 					<br>$CatatanCama</td></tr>
   <tr><td class=ul1 colspan=3>
       <input type=submit name='Submit' value='Login' />
