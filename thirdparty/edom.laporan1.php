@@ -10,18 +10,25 @@ else die(ErrorMsg('Error',
   "Anda tidak berhak menjalankan modul ini."));*/
 
 // *** Main ***
-TampilkanJudul("EDOM");
-$gos = 'frameEdomLaporan';
+TampilkanJudul(".: Laporan EDOM :.");
+$gos = 'frameEdomLaporan1';
 CekBolehAksesModul();
 $gos();
 
 // *** Functions ***
-function frameEdomLaporan() {
-  echo '<iframe src="http://localhost/kuesioner/index.php/laporan/edom_0" seamless="seamless" frameborder="0" width="100%" height="60%"></iframe>';
+function frameEdomLaporan1() {
+  echo '<iframe src="http://localhost/kuesioner/index.php/laporan/edom_1" seamless="seamless" frameborder="0" width="100%" height="100%"></iframe>';
 }
 
 function CekBolehAksesModul() {
-    $arrAkses = array(1, 20, 41, 120);
+    $arrAkses = array(1, //superuser
+        20, //admin 
+        41, //TU
+        40, //BAA
+        50, //ka BAA
+        100, //dosen
+        140 //rektor
+        ); //mahasiswa 120
     $key = array_search($_SESSION['_LevelID'], $arrAkses);
     if ($key === false)
         die(ErrorMsg('Error', "Anda tidak berhak mengakses modul ini.<br />
