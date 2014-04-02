@@ -17,7 +17,17 @@ $gos();
 
 // *** Functions ***
 function frameEdom() {
-  echo '<iframe src="http://localhost/kuesioner/index.php/kuesioner" seamless="seamless" frameborder="0" width="100%" height="100%"></iframe>';
+  echo '<script type="text/javascript">
+        function iframeLoaded() {
+            var iFrameID = document.getElementById(\'idIframe\');
+            if(iFrameID) {
+                  // here you can make the height, I delete it first, then I make it again
+                  iFrameID.height = "";
+                  iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + 20 + "px";
+            }   
+        }
+        </script>
+        <iframe onLoad="iframeLoaded()" id="idIframe" src="http://localhost/kuesioner/index.php/kuesioner/edom" seamless="seamless" frameborder="0" width="100%">Your browser does not support inline frames.</iframe>';
 }
 
 function CekBolehAksesModul() {
