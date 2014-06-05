@@ -27,5 +27,5 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!--<script src="others/bootstrap.min.js"></script>-->
 <?php
-print_r($_SESSION);
+//print_r($_SESSION);
 ?>

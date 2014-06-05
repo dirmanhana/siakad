@@ -12,7 +12,7 @@ else die(ErrorMsg('Error',
 // *** Main ***
 TampilkanJudul("Form EDOM");
 $gos = 'frameEdom';
-CekBolehAksesModul();
+//CekBolehAksesModul();
 $gos();
 
 // *** Functions ***
@@ -23,14 +23,17 @@ function frameEdom() {
             if(iFrameID) {
                   // here you can make the height, I delete it first, then I make it again
                   iFrameID.height = "";
-                  iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + 20 + "px";
+                  iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + 40 + "px";
             }   
         }
+        window.onresize = function(event) {
+            iframeLoaded();
+        };
         </script>
-        <iframe onLoad="iframeLoaded()" id="idIframe" src="http://localhost/kuesioner/index.php/kuesioner/edom" seamless="seamless" frameborder="0" width="100%">Your browser does not support inline frames.</iframe>';
+        <iframe onLoad="iframeLoaded()" id="idIframe" src="http://'.$_SERVER['SERVER_NAME'].'/kuesioner/index.php/kuesioner/edom" seamless="seamless" frameborder="0" width="100%">Your browser does not support inline frames.</iframe>';
 }
 
-function CekBolehAksesModul() {
+/*function CekBolehAksesModul() {
     $arrAkses = array(1, //superuser
         20, //admin 
         41, //TU
@@ -43,5 +46,5 @@ function CekBolehAksesModul() {
     if ($key === false)
         die(ErrorMsg('Error', "Anda tidak berhak mengakses modul ini.<br />
       Hubungi Sysadmin untuk informasi lebih lanjut."));
-}
+}*/
 ?>

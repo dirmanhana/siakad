@@ -10,13 +10,13 @@ else die(ErrorMsg('Error',
   "Anda tidak berhak menjalankan modul ini."));*/
 
 // *** Main ***
-TampilkanJudul(".: Laporan EDOM :.");
-$gos = 'frameEdomLaporan1';
+TampilkanJudul("Laporan EDOM");
+$gos = 'frameEdomProses';
 //CekBolehAksesModul();
 $gos();
 
 // *** Functions ***
-function frameEdomLaporan1() {
+function frameEdomProses() {
   echo '<script type="text/javascript">
         function iframeLoaded() {
             var iFrameID = document.getElementById(\'idIframe\');
@@ -30,7 +30,7 @@ function frameEdomLaporan1() {
             iframeLoaded();
         };
         </script>
-        <iframe onLoad="iframeLoaded()" id="idIframe" src="http://'.$_SERVER['SERVER_NAME'].'/kuesioner/index.php/laporan/edom_1" seamless="seamless" frameborder="0" width="100%">Your browser does not support inline frames.</iframe>';
+        <iframe onLoad="iframeLoaded()" id="idIframe" src="http://'.$_SERVER['SERVER_NAME'].'/kuesioner/index.php/laporan/edom_0_process" seamless="seamless" frameborder="0" width="100%">Your browser does not support inline frames.</iframe>';
 }
 
 /*function CekBolehAksesModul() {
@@ -39,8 +39,8 @@ function frameEdomLaporan1() {
         41, //TU
         40, //BAA
         50, //ka BAA
-        100, //dosen
-        140 //rektor
+        //100, //dosen
+        //140 //rektor
         ); //mahasiswa 120
     $key = array_search($_SESSION['_LevelID'], $arrAkses);
     if ($key === false)
